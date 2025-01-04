@@ -69,6 +69,7 @@
          <table class="table table-bordered">
            <thead>
             <th> Item </th>
+            <th> Location </th>
             <th> Price </th>
             <th> Qty </th>
             <th> Total </th>

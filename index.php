@@ -6,8 +6,8 @@
 <?php include_once('layouts/header.php'); ?>
 <div class="login-page">
     <div class="text-center">
-       <h1>Login Panel</h1>
-       <h4>Inventory Management System</h4>
+      <h1>Sanka Mobile</h1>
+      <h4>Telecommunication partner</h4>
      </div>
      <?php echo display_msg($msg); ?>
       <form method="post" action="auth.php" class="clearfix">

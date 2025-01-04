@@ -34,26 +34,33 @@
     if($results = find_all_product_info_by_title($product_title)){
         foreach ($results as $result) {
 
-          $html .= "<tr>";
+          if(!$result['quantity'] <= 0){
 
-          $html .= "<td id=\"s_name\">".$result['name']."</td>";
-          $html .= "<input type=\"hidden\" name=\"s_id\" value=\"{$result['id']}\">";
-          $html  .= "<td>";
-          $html  .= "<input type=\"text\" class=\"form-control\" name=\"price\" value=\"{$result['sale_price']}\">";
-          $html  .= "</td>";
-          $html .= "<td id=\"s_qty\">";
-          $html .= "<input type=\"text\" class=\"form-control\" name=\"quantity\" value=\"1\">";
-          $html  .= "</td>";
-          $html  .= "<td>";
-          $html  .= "<input type=\"text\" class=\"form-control\" name=\"total\" value=\"{$result['sale_price']}\">";
-          $html  .= "</td>";
-          $html  .= "<td>";
-          $html  .= "<input type=\"date\" class=\"form-control datePicker\" name=\"date\" data-date data-date-format=\"yyyy-mm-dd\">";
-          $html  .= "</td>";
-          $html  .= "<td>";
-          $html  .= "<button type=\"submit\" name=\"add_sale\" class=\"btn btn-primary\">Add sale</button>";
-          $html  .= "</td>";
-          $html  .= "</tr>";
+            $html .= "<tr>";
+
+            $html .= "<td id=\"s_name\">".$result['name']."</td>";
+            $html .= "<td id=\"s_name\">".$result['location']."</td>";
+            $html .= "<input type=\"hidden\" name=\"s_id\" value=\"{$result['id']}\">";
+            $html  .= "<td>";
+            $html  .= "<input type=\"text\" class=\"form-control\" name=\"price\" value=\"{$result['sale_price']}\">";
+            $html  .= "</td>";
+            $html .= "<td id=\"s_qty\">";
+            $html .= "<input type=\"text\" class=\"form-control\" name=\"quantity\" value=\"1\">";
+            $html  .= "</td>";
+            $html  .= "<td>";
+            $html  .= "<input type=\"text\" class=\"form-control\" name=\"total\" value=\"{$result['sale_price']}\">";
+            $html  .= "</td>";
+            $html  .= "<td>";
+            $html  .= "<input type=\"date\" class=\"form-control datePicker\" name=\"date\" data-date data-date-format=\"yyyy-mm-dd\">";
+            $html  .= "</td>";
+            $html  .= "<td>";
+            $html  .= "<button type=\"submit\" name=\"add_sale\" class=\"btn btn-primary\">Add sale</button>";
+            $html  .= "</td>";
+            $html  .= "</tr>";
+          
+          }else{
+            $html ='<tr><td>Out of Stock</td></tr>';
+          }
 
         }
     } else {
