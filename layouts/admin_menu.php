@@ -29,6 +29,7 @@
     <ul class="nav submenu">
        <li><a href="product.php">Manage Products</a> </li>
        <li><a href="add_product.php">Add Products</a> </li>
+       <li><a href="tempered_search.php">Tempered Usability</a> </li>
    </ul>
   </li>
   <li>

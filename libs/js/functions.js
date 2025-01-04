@@ -66,6 +66,87 @@ function suggetion() {
             });
       e.preventDefault();
   });
+
+
+
+
+
+// function suggetion() {
+
+//     $('#sug_input-tempered').keyup(function(e) {
+
+//         var formData = {
+//             'product_name' : $('input[name=title]').val()
+//         };
+
+//         if(formData['product_name'].length >= 1){
+
+//           // process the form
+//           $.ajax({
+//               type        : 'POST',
+//               url         : 'tempered_ajax.php',
+//               data        : formData,
+//               dataType    : 'json',
+//               encode      : true
+//           })
+//               .done(function(data) {
+//                   //console.log(data);
+//                   $('#result').html(data).fadeIn();
+//                   $('#result li').click(function() {
+
+//                     $('#sug_input-tempered').val($(this).text());
+//                     $('#result').fadeOut(500);
+
+//                   });
+
+//                   $("#sug_input-tempered").blur(function(){
+//                     $("#result").fadeOut(500);
+//                   });
+
+//               });
+
+//         } else {
+
+//           $("#result").hide();
+
+//         };
+
+//         e.preventDefault();
+//     });
+
+// }
+
+
+
+  $('#sug-form-tempered').submit(function(e) {
+    
+    var formData = {
+        'p_name' : 'sdsdsdsds'
+    };
+
+      // process the form
+      $.ajax({
+          type        : 'POST',
+          url         : 'tempered_ajax.php',
+          data        : formData,
+          dataType    : 'json',
+          encode      : true
+      })
+          .done(function(data) {
+            //   console.log(data);
+              $('#product_info_tempered').html(data).show();
+
+
+          }).fail(function() {
+              $('#product_info_tempered').html(data).show();
+          });
+    e.preventDefault();
+});
+
+
+
+
+
   function total(){
     $('#product_info input').change(function(e)  {
             var price = +$('input[name=price]').val() || 0;
